@@ -17,6 +17,7 @@
 		<org.slf4j-version>1.5.10</org.slf4j-version>
 	</properties>
 	<dependencies>
+	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -258,15 +259,13 @@
 	
 	<build>
 		<plugins>
-			<plugin> 
-				 <groupId>org.apache.maven.plugins</groupId>
-    					<artifactId>maven-compiler-plugin</artifactId>
-   					 <version>2.3.2</version>
-				    <configuration>
- 				       <source>${java-version}</source>
-				        <target>${java-version}</target>
- 				       <encoding>UTF-8</encoding>
- 					   </configuration>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -357,25 +356,21 @@
 					</executions>
 			</plugin>
 
-			
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <configuration>
-        <classesDirectory>${project.build.directory}/generated-classes/emma/classes</classesDirectory>
-         <skipTests>false</skipTests>
-	<includes>
-	<include>**/App.java</include>
-	</includes>
-    </configuration>
-</plugin>
-
-		<plugin>
-          	<groupId>org.apache.maven.plugins</groupId>
-    		<artifactId>maven-surefire-plugin</artifactId>
- 			<version>2.9</version>    
-        </plugin>
-
+ <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+         <configuration>
+         <includes>
+        <include>**/*.java</include>
+        </includes>
+          <testFailureIgnore>true</testFailureIgnore>
+         <!-- <classesDirectory>${project.build.directory}\test-classes</classesDirectory>-->
+          <skipTests>true</skipTests> 
+    </configuration> 
+  </plugin>
+  
+  
+  
 <plugin>
     <groupId>org.sonatype.maven.plugin</groupId>
     <artifactId>emma4it-maven-plugin</artifactId>
@@ -398,7 +393,6 @@
     </executions>
 </plugin>
 			
-		
 	
 						
 			<plugin>

@@ -5,7 +5,7 @@
 		something goes wrong !!!</p>
 	<table  style="margin: 0;  position: center;">
 		<tr>
-			<td style="text-align:  center"><c:out value="${errorinfo.messageToUser }"></c:out>
+			<td style="text-align:  center"> <c:out value="${errorinfo.messageToUser }"></c:out>
 			</td>
 
 		</tr>

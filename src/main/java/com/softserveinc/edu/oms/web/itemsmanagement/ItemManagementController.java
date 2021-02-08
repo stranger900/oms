@@ -67,8 +67,7 @@ public class ItemManagementController {
 
 			return ErrorController.redirectToErrorPage(errorInfo, request);
 		}
-		map.put("products",
-				ItemManagementUtils.paging(1, 50, productService.findAll()));
+		map.put("products", ItemManagementUtils.paging(1, 50, productService.findAll()));
 		System.out.println(productService.findAll().size());
 
 		return "productsList";

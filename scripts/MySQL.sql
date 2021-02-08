@@ -1,4 +1,4 @@
-use lv566;
+use lv459oms;
 insert into Roles(RoleName) values('Administrator');
 insert into Roles(RoleName) values('Merchandiser');
 insert into Roles(RoleName) values('Supervisor');
