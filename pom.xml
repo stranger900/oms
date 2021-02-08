@@ -362,9 +362,9 @@
     <configuration>
         <classesDirectory>${project.build.directory}/generated-classes/emma/classes</classesDirectory>
          <skipTests>false</skipTests>
-	<!-- <includes> -->
-	<!-- <include>**/App.java</include> -->
-	<!-- </includes> -->
+	<includes>
+	<include>**/App.java</include>
+	</includes>
     </configuration>
 </plugin>
 
