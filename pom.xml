@@ -392,7 +392,24 @@
         </execution>
     </executions>
 </plugin>
-			
+		
+<!-- apetrysh -->
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>7a397e483291-releases</name>
+        <url>http://10.26.1.1:8081/artifactory/libs-release-local</url>
+    </repository>
+</distributionManagement>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>7a397e483291-snapshots</name>
+        <url>http://10.26.1.1:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
+
+<!-- apetrysh -->
 	
 						
 			<plugin>
