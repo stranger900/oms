@@ -395,7 +395,7 @@
     </executions>
 </plugin>
 		
-<!-- apetrysh -->
+<!-- apetrysh 
 
    <distributionManagement>
     <repository>
@@ -414,7 +414,7 @@
 </distributionManagement>
 
 
-<!-- apetrysh -->
+ apetrysh -->
 	
 						
 			<plugin>
