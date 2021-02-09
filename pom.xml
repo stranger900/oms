@@ -256,15 +256,7 @@
 			</snapshots>
 		</repository>
 
-<!-- apetrysh -->
 
-	
-	<repository>
-        <id>central</id>
-        <name>7a397e483291-releases</name>
-        <url>http://10.26.1.1:8081/artifactory/libs-release-local</url>
-    	</repository>
-<!-- apetrysh -->
 	</repositories>
 	
 	<build>
@@ -403,7 +395,7 @@
     </executions>
 </plugin>
 		
-<!-- apetrysh -->
+<!-- apetrysh 
 
     <repository>
         <id>central</id>
@@ -418,7 +410,7 @@
     </snapshotRepository>
 
 
-<!-- apetrysh -->
+ apetrysh -->
 	
 						
 			<plugin>
