@@ -17,7 +17,6 @@
 		<org.slf4j-version>1.5.10</org.slf4j-version>
 	</properties>
 	<dependencies>
-	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -255,8 +254,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-
-
 	</repositories>
 	
 	<build>
@@ -349,30 +346,46 @@
 						</filters>
 					</configuration>
 					<executions>
-						<!-- execution>
+						<execution>
 							<phase>process-classes</phase>
 							<goals>
 								<goal>instrument</goal>
 							</goals>
-						</execution -->
+						</execution>
 					</executions>
 			</plugin>
 
- <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-         <configuration>
-         <includes>
-        <include>**/*.java</include>
-        </includes>
-          <testFailureIgnore>true</testFailureIgnore>
-         <!-- <classesDirectory>${project.build.directory}\test-classes</classesDirectory>-->
-          <skipTests>true</skipTests> 
-    </configuration> 
-  </plugin>
-  
-  
-  
+			
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <configuration>
+        <classesDirectory>${project.build.directory}/generated-classes/emma/classes</classesDirectory>
+        <skipTests>false</skipTests> 
+    </configuration>
+</plugin>
+
+<plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.6</version>
+        <executions>
+     		 <execution>
+        		<id>prepare-agent</id>
+        			<goals>
+         				<goal>prepare-agent</goal>
+        			</goals>
+     	 		</execution>
+      			<execution>
+        			<id>report</id>
+        			<goals>
+         				<goal>report</goal>
+        			</goals>
+      			</execution>
+    	</executions>
+    </plugin>
+
+
 <plugin>
     <groupId>org.sonatype.maven.plugin</groupId>
     <artifactId>emma4it-maven-plugin</artifactId>
@@ -394,27 +407,8 @@
         </execution>
     </executions>
 </plugin>
+			
 		
-<!-- apetrysh 
-
-   <distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>7a397e483291-releases</name>
-        <url>http://10.26.1.1:8081/artifactory/libs-release-local</url>
-    </repository>
-</distributionManagement>
-
-<distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>7a397e483291-snapshots</name>
-        <url>http://10.26.1.1:8081/artifactory/libs-snapshot-local</url>
-    </snapshotRepository>
-</distributionManagement>
-
-
- apetrysh -->
 	
 						
 			<plugin>
